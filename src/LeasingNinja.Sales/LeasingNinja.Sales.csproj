@@ -6,7 +6,6 @@
 
     <ItemGroup>
       <Folder Include="Application" />
-      <Folder Include="Infrastructure" />
       <Folder Include="UserInterface" />
     </ItemGroup>
 
