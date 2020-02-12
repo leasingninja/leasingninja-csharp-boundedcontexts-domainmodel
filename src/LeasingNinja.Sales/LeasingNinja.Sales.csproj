@@ -5,7 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Application" />
       <Folder Include="UserInterface" />
     </ItemGroup>
 
