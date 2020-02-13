@@ -4,16 +4,16 @@ using Xunit;
 
 namespace dddbits.Basetypes
 {
-    public class TinyStringTypeTest
+    public class TinyStringValueTest
     {
-        class Firstname : TinyStringType
+        class Firstname : TinyStringValue
         {
             public Firstname(string value) : base(value)
             {
             }
         }
 
-        class Lastname : TinyStringType
+        class Lastname : TinyStringValue
         {
             public Lastname(string value) : base(value)
             {
@@ -21,10 +21,10 @@ namespace dddbits.Basetypes
         }
 
         [Fact]
-        void givenAValueObject_whenGetValue_thenValueIsEqualToTheString()
+        void GivenAValueObject_whenGetValue_thenValueIsEqualToTheString()
         {
             // given
-            TinyStringType vo = new Firstname("The string value");
+            TinyStringValue vo = new Firstname("The string value");
             {
             }
    
@@ -36,7 +36,7 @@ namespace dddbits.Basetypes
         }
 
         [Fact]
-        void givenTwoValueObjectsOfSameTypeWithSameValue_whenEquals_thenTrue()
+        void GivenTwoValueObjectsOfSameTypeWithSameValue_whenEquals_thenTrue()
         {
             // given
             Firstname vo1 = new Firstname("Otto");
@@ -50,7 +50,7 @@ namespace dddbits.Basetypes
         }
 
         [Fact]
-        void givenTwoValueObjectsOfDifferentSubtypeWithSameValue_whenEquals_thenFalse()
+        void GivenTwoValueObjectsOfDifferentSubtypeWithSameValue_whenEquals_thenFalse()
         {
             // given
             Firstname vo1 = new Firstname("Otto");
@@ -64,7 +64,7 @@ namespace dddbits.Basetypes
         }
 
         [Fact]
-        void givenTwoValueObjectsOfSameTypeWithSameValue_whenOperatorEq_thenTrue()
+        void GivenTwoValueObjectsOfSameTypeWithSameValue_whenOperatorEq_thenTrue()
         {
             // given
             Firstname vo1 = new Firstname("Otto");
@@ -78,7 +78,7 @@ namespace dddbits.Basetypes
         }
 
         [Fact]
-        void givenAValueObject_whenCallingToString_thenItReturnsSubClassNameAndValue()
+        void GivenAValueObject_whenCallingToString_thenItReturnsSubClassNameAndValue()
         {
             // given
             Firstname vo = new Firstname("Otto");

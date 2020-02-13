@@ -2,7 +2,7 @@ using NodaTime;
 
 namespace dddbits.Basetypes
 {
-    public abstract class TinyDateValue : TinyType<LocalDate>
+    public abstract class TinyDateValue : TinyValue<LocalDate>
     {
         protected TinyDateValue(LocalDate date) : base(date)
         {

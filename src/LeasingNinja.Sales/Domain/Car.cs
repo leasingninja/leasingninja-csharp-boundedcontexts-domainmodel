@@ -4,7 +4,7 @@ using dddbits.Basetypes;
 namespace LeasingNinja.Sales.Domain
 {
     [ValueObject]
-    public class Car : TinyStringType
+    public class Car : TinyStringValue
     {
         private Car(string name) : base(name)
         {

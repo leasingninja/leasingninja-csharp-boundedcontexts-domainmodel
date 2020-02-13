@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace dddbits.Basetypes
 {
-    public abstract class TinyType<T> : IEquatable<TinyType<T>>
+    public abstract class TinyValue<T> : IEquatable<TinyValue<T>>
     {
-        protected TinyType(T value)
+        protected TinyValue(T value)
         {
             Value = value;
         }
@@ -14,7 +14,7 @@ namespace dddbits.Basetypes
         
         public override string ToString() => GetType().Name + " [" + Value + "]";
 
-        public bool Equals(TinyType<T> other)
+        public bool Equals(TinyValue<T> other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
@@ -27,13 +27,13 @@ namespace dddbits.Basetypes
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((TinyType<T>) obj);
+            return Equals((TinyValue<T>) obj);
         }
 
         public override int GetHashCode() => EqualityComparer<T>.Default.GetHashCode(Value);
         
-        public static bool operator ==(TinyType<T> left, TinyType<T> right) => Equals(left, right);
+        public static bool operator ==(TinyValue<T> left, TinyValue<T> right) => Equals(left, right);
 
-        public static bool operator !=(TinyType<T> left, TinyType<T> right) => !Equals(left, right);
+        public static bool operator !=(TinyValue<T> left, TinyValue<T> right) => !Equals(left, right);
     }
 }
