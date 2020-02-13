@@ -19,7 +19,7 @@ namespace LeasingNinja.Sales.Application
         }
 
         [Fact]
-        void givenAContract_WhenSign_ThenSignedContractIsSaved()
+        void GivenAContract_WhenSign_ThenSignedContractIsSaved()
         {
             // Given
             var contract = new Contract(
