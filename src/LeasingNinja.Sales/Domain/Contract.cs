@@ -1,6 +1,6 @@
 using System;
 using System.Diagnostics;
-using dddbits.Attributes;
+using NMolecules.DDD;
 using dddbits.Basetypes;
 using static System.Diagnostics.Contracts.Contract;
 

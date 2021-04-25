@@ -1,4 +1,4 @@
-using dddbits.Attributes;
+using NMolecules.DDD;
 using dddbits.Basetypes;
 
 namespace LeasingNinja.Sales.Domain
