@@ -2,13 +2,14 @@ using System;
 using System.Diagnostics;
 using NMolecules.DDD;
 using dddbits.Basetypes;
-using static System.Diagnostics.Contracts.Contract;
+//using static System.Diagnostics.Contracts.Contract;
 
 namespace LeasingNinja.Sales.Domain
 {
     [Entity]
     public class Contract : Entity<ContractNumber>
     {
+        [Identity]
         public ContractNumber Number => Identity;
 
         public Customer Lessee { get; }
