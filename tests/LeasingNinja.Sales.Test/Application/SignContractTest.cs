@@ -27,8 +27,8 @@ namespace LeasingNinja.Sales.Application
                 Customer.Of("Bob Smith"),
                 Car.Of("Mercedes Benz E-Class"),
                 Amount.Of(10_000, "EUR"));
-            _contractsMock.Setup(
-                contracts => contracts.With(ContractNumber.Of("4711")))
+            _contractsMock
+                .Setup(contracts => contracts.With(ContractNumber.Of("4711")))
                 .Returns(contract);
 		
             // When
@@ -39,13 +39,14 @@ namespace LeasingNinja.Sales.Application
 		
             // Then
             //then(contractsMock).should().save(refEq(Contract.restore(
-            _contractsMock.Verify(contracts => contracts.Save(
-            Contract.Restore(
-                ContractNumber.Of("4711"),
-                Customer.Of("Bob Smith"),
-                Car.Of("Mercedes Benz E-Class"),
-                Amount.Of(10_000,  "EUR"),
-                SignDate.Of(2018, 04, 12))));
+            _contractsMock
+                .Verify(contracts => contracts.Save(
+                    Contract.Restore(
+                        ContractNumber.Of("4711"),
+                        Customer.Of("Bob Smith"),
+                        Car.Of("Mercedes Benz E-Class"),
+                        Amount.Of(10_000,  "EUR"),
+                        SignDate.Of(2018, 04, 12))));
             //then(inboxApplicationServiceMock).should().confirmSignedContract("4711", 2018, 04, 12);
         }
 
