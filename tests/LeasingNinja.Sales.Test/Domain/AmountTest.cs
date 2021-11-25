@@ -9,8 +9,8 @@ namespace LeasingNinja.Sales.Domain
         public void GivenTwoEqualAmounts_whenEquals_thenAreEqual()
         {
             // given
-            var amount1 = Amount.Of(100, "EUR");
-            var amount2 = Amount.Of(100, "EUR");
+            var amount1 = Amount.Of(100m, "EUR");
+            var amount2 = Amount.Of(100m, "EUR");
 
             // when
             bool areEqual = amount1.Equals(amount2);
@@ -22,8 +22,8 @@ namespace LeasingNinja.Sales.Domain
         [Fact]
         public void GivenTwoUnequalAmounts_whenEquals_thenAreNotEqual() {
             // given
-            var amount1 = Amount.Of(100, "EUR");
-            var amount2 = Amount.Of(200, "EUR");
+            var amount1 = Amount.Of(100m, "EUR");
+            var amount2 = Amount.Of(200m, "EUR");
 
             // when
             bool areEqual = amount1.Equals(amount2);
@@ -35,8 +35,8 @@ namespace LeasingNinja.Sales.Domain
         [Fact]
         public void GivenTwoAmountsWithUnequalCurrencies_whenEquals_thenAreNotEqual() {
             // given
-            var amount1 = Amount.Of(100, "EUR");
-            var amount2 = Amount.Of(100, "GBP");
+            var amount1 = Amount.Of(100m, "EUR");
+            var amount2 = Amount.Of(100m, "GBP");
 
             // when
             bool areEqual = amount1.Equals(amount2);
