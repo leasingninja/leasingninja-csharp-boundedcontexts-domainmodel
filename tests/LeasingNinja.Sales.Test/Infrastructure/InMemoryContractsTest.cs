@@ -7,11 +7,15 @@ namespace LeasingNinja.Sales.Infrastructure
     public class InMemoryContractsTest
     {
         private InMemoryContracts _contractsUnderTest;
+
+        public InMemoryContractsTest()
+        {
+            _contractsUnderTest = new InMemoryContracts();
+        }
 	
         [Fact]
         void GivenEmtpyContracts_WhenContractSavedAndLoaded_ThenItIsAnEqualContract() {
             // given
-            _contractsUnderTest = new InMemoryContracts();
 		
             // when
             _contractsUnderTest.Save(new Contract(
