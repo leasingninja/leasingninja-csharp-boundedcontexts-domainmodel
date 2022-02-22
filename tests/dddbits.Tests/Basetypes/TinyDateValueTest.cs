@@ -99,6 +99,7 @@ namespace dddbits.Basetypes
 //
 
         [Fact]
+        [UseCulture("en-US")]
         void givenAValueObject_whenCallingToString_thenItReturnsSubClassNameAndValue()
         {
             // given
@@ -108,7 +109,6 @@ namespace dddbits.Basetypes
             string str = vo.ToString();
 
             // then
-            //Check.That(str).IsEqualTo("DateOfBirth [2012-12-06]"); TODO: test without dependency to CurrentCulture
             Check.That(str).IsEqualTo("DateOfBirth [Thursday, 06 December 2012]");
         }
     }
