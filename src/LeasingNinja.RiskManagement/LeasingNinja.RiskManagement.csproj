@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Application" />
+      <Folder Include="Domain" />
+      <Folder Include="Infrastructure" />
+      <Folder Include="UserInterface" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="NMolecules.Architecture" Version="0.1.0" />
+      <PackageReference Include="NMolecules.DDD" Version="0.2.1" />
+      <ProjectReference Include="..\dddbits\dddbits.csproj" />
+    </ItemGroup>
+
+</Project>
