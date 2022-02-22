@@ -3,7 +3,8 @@
 namespace LeasingNinja.Sales.Domain
 {
     [ValueObject]
-    public readonly struct Amount
+//    public readonly record struct Amount(decimal AmountValue, string Currency);
+    public readonly record struct Amount
     {
         public decimal AmountValue { get; }
         public string Currency { get; }
