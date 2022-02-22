@@ -1,5 +1,7 @@
 using NFluent;
 using NodaTime;
+using System.Globalization;
+using System.Threading;
 using Xunit;
 
 namespace dddbits.Basetypes
@@ -99,9 +101,12 @@ namespace dddbits.Basetypes
 //
 
         [Fact]
-        [UseCulture("en-US")]
+//        [UseCulture("en-US")]
         void givenAValueObject_whenCallingToString_thenItReturnsSubClassNameAndValue()
         {
+            // setup
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+
             // given
             DateOfBirth vo = new DateOfBirth(2012, 12, 6);
 
@@ -109,7 +114,7 @@ namespace dddbits.Basetypes
             string str = vo.ToString();
 
             // then
-            Check.That(str).IsEqualTo("DateOfBirth [Thursday, 06 December 2012]");
+            Check.That(str).IsEqualTo("DateOfBirth [Thursday, December 6, 2012]");
         }
     }
 }
