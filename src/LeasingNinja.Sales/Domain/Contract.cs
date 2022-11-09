@@ -1,8 +1,7 @@
-using System;
-using System.Diagnostics;
+using static System.Diagnostics.Debug;
+
 using NMolecules.DDD;
 using dddbits.Basetypes;
-//using static System.Diagnostics.Contracts.Contract;
 
 namespace LeasingNinja.Sales.Domain
 {
@@ -41,6 +40,27 @@ namespace LeasingNinja.Sales.Domain
             Price = price;
         }
 
+        public void Sign(SignDate date)
+        {
+           Assert(!IsSigned); 
+
+           _signDate = date;
+
+           Assert(IsSigned);
+        }
+
+        //// Alternative 1: Exceptions
+        // public void Sign(SignDate date)
+        // {
+        //     if (IsSigned) throw new InvalidOperationException("Precondition violated: !IsSigned");
+        //
+        //    _signDate = date;
+        //
+        //     if (!IsSigned) throw new InvalidOperationException("Precondition violated: !IsSigned");
+        // }
+
+        //// Alternative 2: CodeContracts
+        //using static System.Diagnostics.Contracts.Contract;
         // public void Sign(SignDate date)
         // {
         //     Requires(!IsSigned);
@@ -48,18 +68,6 @@ namespace LeasingNinja.Sales.Domain
         //
         //     _signDate = date;
         // }
-        
-        public void Sign(SignDate date)
-        {
-           if (IsSigned) 
-           {
-                throw new InvalidOperationException("Precondition violated: !IsSigned");
-           }
-
-           _signDate = date;
-
-           Debug.Assert(IsSigned);
-        }
         
     }
 }
