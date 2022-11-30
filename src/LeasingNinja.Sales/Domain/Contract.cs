@@ -53,7 +53,7 @@ namespace LeasingNinja.Sales.Domain
             get
             {
                 Assert(IsSigned);
-                return _signDate!;
+                return _signDate.Value;
             }
         }
 

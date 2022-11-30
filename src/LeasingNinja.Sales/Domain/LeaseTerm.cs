@@ -3,7 +3,7 @@ using NMolecules.DDD;
 namespace LeasingNinja.Sales.Domain
 {
     [ValueObject]
-    public record LeaseTerm(int NoOfMonths)
+    public readonly record struct LeaseTerm(int NoOfMonths)
     {
         public static LeaseTerm OfMonths(int noOfMonths)
             => new LeaseTerm(noOfMonths);

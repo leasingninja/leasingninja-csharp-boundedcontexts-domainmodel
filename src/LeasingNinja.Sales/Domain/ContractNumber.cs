@@ -3,15 +3,8 @@ using NMolecules.DDD;
 namespace LeasingNinja.Sales.Domain
 {
     [ValueObject]
-    public readonly struct ContractNumber
+    public readonly record struct ContractNumber(string Value)
     {
-        private ContractNumber(string value)
-        {
-            Value = value;
-        }
-
-        public string Value { get; }
-
         public static ContractNumber Of(string value) => new ContractNumber(value);
     }
 }
