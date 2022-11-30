@@ -113,5 +113,10 @@ namespace LeasingNinja.Sales.Domain
         //     _signDate = date;
         // }
 
+        public override string ToString()
+        {
+            return "Contract [number=" + Number + ", lessee=" + Lessee + ", car=" + Car
+                    + ", price=" + Price + ", signDate=" + SignDate + "]";
+        }
     }
 }
