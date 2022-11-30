@@ -58,24 +58,6 @@ namespace LeasingNinja.Sales.Domain
             }
         }
 
-
-
-        //[Factory]
-        public static Contract Restore(ContractNumber number, Customer lessee, Car car, Amount price, LeaseTerm? leaseTerm, Interest? interest, SignDate? signDate)
-        {
-            var contract = new Contract(number, lessee, car, price);
-            if (leaseTerm != null && interest != null)
-            {
-                contract.CalculateInstallmentFor(leaseTerm, interest);
-            }
-            if(signDate != null)
-            {
-                contract.Sign(signDate);
-            }
-
-            return contract;
-        }
-
         public Contract(ContractNumber number, Customer lessee, Car car, Amount price) : base(number)
         {
             Lessee = lessee;

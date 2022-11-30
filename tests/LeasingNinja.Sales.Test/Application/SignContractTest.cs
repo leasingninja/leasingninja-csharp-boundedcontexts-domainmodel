@@ -42,7 +42,7 @@ namespace LeasingNinja.Sales.Application
             //then(contractsMock).should().save(refEq(Contract.restore(
             _contractsMock
                 .Verify(contracts => contracts.Save(
-                    Contract.Restore(
+                    ContractFactory.RestoreContract(
                         ContractNumber.Of("4711"),
                         Customer.Of("Bob Smith"),
                         Car.Of("Mercedes Benz E-Class"),
