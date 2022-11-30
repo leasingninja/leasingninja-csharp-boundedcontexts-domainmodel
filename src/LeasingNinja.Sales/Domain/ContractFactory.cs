@@ -1,8 +1,8 @@
-//using NMolecules.DDD;
+using NMolecules.DDD.Attributes;
 
 namespace LeasingNinja.Sales.Domain
 {
-    //[Factory]
+    [Factory]
     public class ContractFactory
     {
         public static Contract RestoreContract(ContractNumber number, Customer lessee, Car car, Amount price, LeaseTerm? leaseTerm, Interest? interest, SignDate? signDate)
