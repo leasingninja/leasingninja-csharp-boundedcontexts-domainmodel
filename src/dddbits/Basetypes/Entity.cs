@@ -15,8 +15,9 @@ namespace dddbits.Basetypes
         }
 
         public TIdentity Identity { get; }
-        
-        public override string ToString() {
+
+        public override string ToString()
+        {
             return GetType().Name + " [id=" + Identity + "]";
         }
 
@@ -33,10 +34,10 @@ namespace dddbits.Basetypes
             return Equals((Entity<TIdentity>) obj);
         }
 
-        public override int GetHashCode() 
+        public override int GetHashCode()
         {
             return EqualityComparer<TIdentity>.Default.GetHashCode(Identity);
         }
-	
+
     }
 }

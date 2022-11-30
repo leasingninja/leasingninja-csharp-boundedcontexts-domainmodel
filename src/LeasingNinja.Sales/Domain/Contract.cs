@@ -2,7 +2,6 @@ using static System.Diagnostics.Debug;
 
 using NMolecules.DDD;
 using dddbits.Basetypes;
-using System;
 
 namespace LeasingNinja.Sales.Domain
 {
