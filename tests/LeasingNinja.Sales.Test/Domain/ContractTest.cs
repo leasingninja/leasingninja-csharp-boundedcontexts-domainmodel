@@ -4,14 +4,49 @@ using Xunit;
 namespace LeasingNinja.Sales.Domain
 {
     public class ContractTest
-    { 
+    {
+    	[Fact]
+        void givenAFilledOutContract_whenCalculate_thenInstallmentIsX() {
+            // given
+            var contract = new Contract(ContractNumber.Of("4711"),
+                    Customer.Of("John Buyer"),
+                    Car.Of("Volkswagen ID.3"),
+                    Amount.Of(40_000, Currency.EUR));
+
+            // when
+            contract.CalculateInstallmentFor(LeaseTerm.OfMonths(48), Interest.Of(3.7));
+
+            // then
+            Check.That(contract.IsCalculated).IsTrue();
+            Check.That(contract.LeaseTerm).IsEqualTo(LeaseTerm.OfMonths(48));
+            Check.That(contract.Interest).IsEqualTo(Interest.Of(3.7));
+            Check.That(contract.Installment).IsEqualTo(Amount.Of(897.80m, Currency.EUR));
+        }
+
         [Fact]
-        void givenANewContract_whenSign_thenContractIsSigned() {
+        void givenAFilledOutContractWith0Interest_whenCalculate_thenInstallmentIsX() {
+            // given
+            var contract = new Contract(ContractNumber.Of("4711"),
+                    Customer.Of("John Buyer"),
+                    Car.Of("Volkswagen ID.3"),
+                    Amount.Of(40_000, Currency.EUR));
+
+            // when
+            contract.CalculateInstallmentFor(LeaseTerm.OfMonths(48), Interest.Of(0));
+
+            // then
+            Check.That(contract.IsCalculated).IsTrue();
+            Check.That(contract.Installment).IsEqualTo(Amount.Of(833.33m, Currency.EUR));
+        }
+
+        [Fact]
+        void givenACalculatedContract_whenSign_thenContractIsSigned() {
             // given
             var contract = new Contract(ContractNumber.Of("4711"),
                 Customer.Of("John Buyer"),
                 Car.Of("Mercedes Benz C-Class"),
-                Amount.Of(20_000, "EUR"));
+                Amount.Of(20_000, Currency.EUR));
+            contract.CalculateInstallmentFor(LeaseTerm.OfMonths(48), Interest.Of(3.7));
 
             // when
             contract.Sign(SignDate.Of(2018, 12, 24));
@@ -31,14 +66,17 @@ namespace LeasingNinja.Sales.Domain
                 ContractNumber.Of("4711"),
                 Customer.Of("John Buyer"),
                 Car.Of("Mercedes Benz C-Class"),
-                Amount.Of(20_000, "EUR"),
+                Amount.Of(20_000, Currency.EUR),
+                LeaseTerm.OfMonths(48),
+                Interest.Of(3.6),
                 SignDate.Of(2018, 04, 12));
 
             // then
             Check.That(contract.Number).IsEqualTo(ContractNumber.Of("4711"));
             Check.That(contract.Lessee).IsEqualTo(Customer.Of("John Buyer"));
             Check.That(contract.Car).IsEqualTo(Car.Of("Mercedes Benz C-Class"));
-            Check.That(contract.Price).IsEqualTo(Amount.Of(20_000, "EUR"));
+            Check.That(contract.Price).IsEqualTo(Amount.Of(20_000, Currency.EUR));
+            Check.That<bool>(contract.IsCalculated).IsTrue();
             Check.That<bool>(contract.IsSigned).IsTrue();
             // check that event ContractSigned is fired
         }

@@ -7,7 +7,7 @@ namespace LeasingNinja.Sales.Application
     public class FilloutContractTest
     {
         private readonly Mock<Contracts> _contractsMock;
-	
+
         private readonly FilloutContract _filloutContractUnderTest;
 
         public FilloutContractTest()
@@ -21,22 +21,22 @@ namespace LeasingNinja.Sales.Application
         {
             // Given
             _contractsMock.Setup(contracts => contracts.Save(It.IsAny<Contract>()));
-           
+
              // When
             _filloutContractUnderTest.With(
                 ContractNumber.Of("4711"),
                 Customer.Of("Bob Smith"),
                 Car.Of("Mercedes Benz E-Class"),
-                Amount.Of(10_000, "EUR"));
-		
-		
+                Amount.Of(10_000, Currency.EUR));
+
+
             // Then
             _contractsMock.Verify(contracts => contracts.Save(new Contract(
                 ContractNumber.Of("4711"),
                 Customer.Of("Bob Smith"),
                 Car.Of("Mercedes Benz E-Class"),
-                Amount.Of(10_000,  "EUR"))));
+                Amount.Of(10_000,  Currency.EUR))));
         }
-        
+
     }
 }

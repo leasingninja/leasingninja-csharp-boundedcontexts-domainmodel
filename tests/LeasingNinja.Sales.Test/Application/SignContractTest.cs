@@ -7,11 +7,11 @@ namespace LeasingNinja.Sales.Application
     public class SignContractTest
     {
         private readonly Mock<Contracts> _contractsMock;
-	
+
         //private InboxApplicationService inboxApplicationServiceMock;
-	
+
         private SignContract _signContractUnderTest;
-        
+
         public SignContractTest()
         {
             _contractsMock = new Mock<Contracts>();
@@ -26,17 +26,18 @@ namespace LeasingNinja.Sales.Application
                 ContractNumber.Of("4711"),
                 Customer.Of("Bob Smith"),
                 Car.Of("Mercedes Benz E-Class"),
-                Amount.Of(10_000, "EUR"));
+                Amount.Of(10_000, Currency.EUR));
+            contract.CalculateInstallmentFor(LeaseTerm.OfMonths(48), Interest.Of(3.7));
             _contractsMock
                 .Setup(contracts => contracts.With(ContractNumber.Of("4711")))
                 .Returns(contract);
-		
+
             // When
             _signContractUnderTest.With(
                 ContractNumber.Of("4711"),
 //				"2018-04-12");
                 SignDate.Of(2018, 4, 12));
-		
+
             // Then
             //then(contractsMock).should().save(refEq(Contract.restore(
             _contractsMock
@@ -45,7 +46,9 @@ namespace LeasingNinja.Sales.Application
                         ContractNumber.Of("4711"),
                         Customer.Of("Bob Smith"),
                         Car.Of("Mercedes Benz E-Class"),
-                        Amount.Of(10_000,  "EUR"),
+                        Amount.Of(10_000,  Currency.EUR),
+                        LeaseTerm.OfMonths(48),
+                        Interest.Of(3.7),
                         SignDate.Of(2018, 04, 12))));
             //then(inboxApplicationServiceMock).should().confirmSignedContract("4711", 2018, 04, 12);
         }
