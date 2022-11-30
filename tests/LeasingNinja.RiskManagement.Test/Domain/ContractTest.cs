@@ -5,20 +5,22 @@ namespace LeasingNinja.RiskManagement.Domain
 {
     public class ContractTest
     {
+        //TODO:
+        // [Fact]
+        // void givenASignedContract_whenCheckCreditRating_ThenRated()
+        // {
+        //     // given
+        //     var contract = new Contract(ContractNumber.Of("4711"), SignDate.Of(2018, 4, 1));
+
+        //     // when
+        //     contract.CheckCreditRating(CreditRating.Of(3));
+
+        //     // then
+        //     Check.That(contract.IsRated).IsTrue();
+        //     Check.That(contract.Rating).IsEqualTo(CreditRating.Of(3));
+        // }
+
 /* TODO: translate from Java to C#
-        [Fact]
-        void givenASignedContract_whenCheckCreditRating_ThenRated() {
-            // given
-            var contract = new Contract(ContractNumber.of("4711"), SignDate.of(2018, 4, 1));
-
-            // when
-            contract.checkCreditRating(CreditRating.GOOD);
-
-            // then
-            assertThat(contract.isRated()).isTrue();
-            assertThat(contract.rating()).isEqualTo(CreditRating.GOOD);
-        }
-
         @Test
         void givenARatedContract_whenVote_ThenVoted() {
             // given
