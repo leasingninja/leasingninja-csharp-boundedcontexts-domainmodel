@@ -1,15 +1,15 @@
 using static System.Diagnostics.Debug;
 
+using System.Collections.Generic;
 using NMolecules.DDD;
-using dddbits.Basetypes;
 
 namespace LeasingNinja.Sales.Domain
 {
     [Entity]
-    public class Contract : Entity<ContractNumber>
+    public class Contract
     {
         [Identity]
-        public ContractNumber Number => Identity;
+        public ContractNumber Number { get; }
 
         public Customer Lessee { get; }
         public Car Car { get; }
@@ -57,8 +57,9 @@ namespace LeasingNinja.Sales.Domain
             }
         }
 
-        public Contract(ContractNumber number, Customer lessee, Car car, Amount price) : base(number)
+        public Contract(ContractNumber number, Customer lessee, Car car, Amount price)
         {
+            Number = number;
             Lessee = lessee;
             Car = car;
             Price = price;
@@ -117,6 +118,24 @@ namespace LeasingNinja.Sales.Domain
         {
             return "Contract [number=" + Number + ", lessee=" + Lessee + ", car=" + Car
                     + ", price=" + Price + ", signDate=" + SignDate + "]";
+        }
+
+        protected bool Equals(Contract other)
+        {
+            return EqualityComparer<ContractNumber>.Default.Equals(Number, other.Number);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Contract) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return Number.GetHashCode();
         }
     }
 }

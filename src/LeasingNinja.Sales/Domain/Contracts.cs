@@ -7,6 +7,6 @@ namespace LeasingNinja.Sales.Domain
     {
         Contract With(ContractNumber number);
 
-        void Save(Contract contract);        
+        void Save(Contract contract);
     }
 }

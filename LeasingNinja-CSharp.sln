@@ -4,10 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeasingNinja.Sales", "src\L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeasingNinja.Sales.Test", "tests\LeasingNinja.Sales.Test\LeasingNinja.Sales.Test.csproj", "{B9E5A596-298C-490A-9E25-D10BFCEE2983}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dddbits", "src\dddbits\dddbits.csproj", "{4EA8EC71-1C57-4D07-BCEF-9831A697AB5C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dddbits.Tests", "tests\dddbits.Tests\dddbits.Tests.csproj", "{79EFF4E3-9895-4AED-A784-4F4D1444BBA5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeasingNinja.RiskManagement", "src\LeasingNinja.RiskManagement\LeasingNinja.RiskManagement.csproj", "{47705816-99D5-4C5C-A968-5C0B3C83522C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeasingNinja.RiskManagement.Test", "tests\LeasingNinja.RiskManagement.Test\LeasingNinja.RiskManagement.Test.csproj", "{7F6B1B14-0E8A-4E23-868F-077FFA98565F}"
@@ -26,14 +22,6 @@ Global
 		{B9E5A596-298C-490A-9E25-D10BFCEE2983}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9E5A596-298C-490A-9E25-D10BFCEE2983}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9E5A596-298C-490A-9E25-D10BFCEE2983}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EA8EC71-1C57-4D07-BCEF-9831A697AB5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EA8EC71-1C57-4D07-BCEF-9831A697AB5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EA8EC71-1C57-4D07-BCEF-9831A697AB5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EA8EC71-1C57-4D07-BCEF-9831A697AB5C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79EFF4E3-9895-4AED-A784-4F4D1444BBA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79EFF4E3-9895-4AED-A784-4F4D1444BBA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79EFF4E3-9895-4AED-A784-4F4D1444BBA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79EFF4E3-9895-4AED-A784-4F4D1444BBA5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{47705816-99D5-4C5C-A968-5C0B3C83522C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{47705816-99D5-4C5C-A968-5C0B3C83522C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47705816-99D5-4C5C-A968-5C0B3C83522C}.Release|Any CPU.ActiveCfg = Release|Any CPU
