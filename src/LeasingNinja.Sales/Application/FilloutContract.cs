@@ -14,10 +14,10 @@ namespace LeasingNinja.Sales.Application
         public void With(ContractNumber number, Customer customer, Car car, Amount amount)
         {
             _contracts.Save(new Contract(
-                number, 
-                customer, 
+                number,
+                customer,
                 car,
-                amount));        
+                amount));
         }
     }
 }
