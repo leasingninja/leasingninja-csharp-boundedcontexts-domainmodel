@@ -68,8 +68,8 @@ namespace LeasingNinja.Sales.Domain
         {
             Assert(!IsSigned);
 
-            double inAdvance = 0;
-            double residualValue = 0;
+            double inAdvance = 0.0;
+            double residualValue = 0.0;
 
             double pmt = FinancialCalculator.pmt(
                 leaseTerm.NoOfMonths,
