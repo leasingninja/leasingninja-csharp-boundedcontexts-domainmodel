@@ -88,5 +88,33 @@ namespace LeasingNinja.Sales.Domain
             // then
             Check.That(areEqual).IsTrue();
         }
+
+        [Fact]
+        void givenTwoAmounts_whenOperatorPlus_thenSumIsCorrect()
+        {
+            // given
+            var amount1 = Amount.Of(100, Currency.EUR);
+            var amount2 = Amount.Of(200, Currency.EUR);
+
+            // when
+            var sum = amount1 + amount2;
+
+            // then
+            Check.That(sum).IsEqualTo(Amount.Of(300, Currency.EUR));
+        }
+
+        [Fact]
+        void givenTwoAmounts_whenOperatorMinus_thenDifferenceIsCorrect()
+        {
+            // given
+            var amount1 = Amount.Of(300, Currency.EUR);
+            var amount2 = Amount.Of(200, Currency.EUR);
+
+            // when
+            var difference = amount1 - amount2;
+
+            // then
+            Check.That(difference).IsEqualTo(Amount.Of(100, Currency.EUR));
+        }
     }
 }
