@@ -5,7 +5,7 @@ using NMolecules.DDD;
 namespace LeasingNinja.RiskManagement.Domain
 {
     [ValueObject]
-    public readonly record struct CreditRating(uint value)
+    public readonly record struct CreditRating(uint Value)
     {
         // TODO:
         // public CreditRating(uint value)
@@ -15,10 +15,10 @@ namespace LeasingNinja.RiskManagement.Domain
         // }
 
         public static bool IsValid(uint value)
-            => value >= 1 && value <= 10;
+            => value is >= 1 and <= 10;
 
         public static CreditRating Of(uint value)
-            => new CreditRating(value);
+            => new(value);
     }
 }
 
