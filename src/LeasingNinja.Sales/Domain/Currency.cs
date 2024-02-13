@@ -1,10 +1,9 @@
 using NMolecules.DDD;
 
-namespace LeasingNinja.Sales.Domain
+namespace LeasingNinja.Sales.Domain;
+
+[ValueObject]
+public enum Currency
 {
-    [ValueObject]
-    public enum Currency
-    {
-        EUR, GBP, USD
-    }
+    EUR, GBP, USD
 }

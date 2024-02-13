@@ -1,24 +1,24 @@
 using NFluent;
 using Xunit;
 
-namespace LeasingNinja.RiskManagement.Domain
+namespace LeasingNinja.RiskManagement.Domain;
+
+public class ContractTest
 {
-    public class ContractTest
-    {
-        //TODO:
-        // [Fact]
-        // void givenASignedContract_whenCheckCreditRating_ThenRated()
-        // {
-        //     // given
-        //     var contract = new Contract(ContractNumber.Of("4711"), SignDate.Of(2018, 4, 1));
+    //TODO:
+    // [Fact]
+    // void givenASignedContract_whenCheckCreditRating_ThenRated()
+    // {
+    //     // given
+    //     var contract = new Contract(ContractNumber.Of("4711"), SignDate.Of(2018, 4, 1));
 
-        //     // when
-        //     contract.CheckCreditRating(CreditRating.Of(3));
+    //     // when
+    //     contract.CheckCreditRating(CreditRating.Of(3));
 
-        //     // then
-        //     Check.That(contract.IsRated).IsTrue();
-        //     Check.That(contract.Rating).IsEqualTo(CreditRating.Of(3));
-        // }
+    //     // then
+    //     Check.That(contract.IsRated).IsTrue();
+    //     Check.That(contract.Rating).IsEqualTo(CreditRating.Of(3));
+    // }
 
 /* TODO: translate from Java to C#
         @Test
@@ -52,5 +52,4 @@ namespace LeasingNinja.RiskManagement.Domain
             assertThat(contract.isVoted()).isTrue();
         }
 */
-    }
 }

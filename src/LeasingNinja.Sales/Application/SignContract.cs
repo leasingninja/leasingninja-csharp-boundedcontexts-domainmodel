@@ -1,25 +1,24 @@
 using LeasingNinja.Sales.Domain;
 
-namespace LeasingNinja.Sales.Application
+namespace LeasingNinja.Sales.Application;
+
+public class SignContract
 {
-    public class SignContract
+    private readonly Contracts _contracts;
+
+    public SignContract(Contracts contracts)
     {
-        private readonly Contracts _contracts;
+        _contracts = contracts;
+    }
 
-        public SignContract(Contracts contracts)
-        {
-            _contracts = contracts;
-        }
-
-        public void With(ContractNumber number, SignDate signDate)
-        {
-            var contract = _contracts.With(number);
+    public void With(ContractNumber number, SignDate signDate)
+    {
+        var contract = _contracts.With(number);
 		
-            contract.Sign(signDate);
+        contract.Sign(signDate);
 		
-            _contracts.Save(contract);
+        _contracts.Save(contract);
 		
-            //riskmanagementInbox.confirmSignedContract(number.value(), signDate.year(), signDate.month(), signDate.day());
-        }
+        //riskmanagementInbox.confirmSignedContract(number.value(), signDate.year(), signDate.month(), signDate.day());
     }
 }

@@ -2,37 +2,36 @@ using LeasingNinja.Sales.Domain;
 using NFluent;
 using Xunit;
 
-namespace LeasingNinja.Sales.Infrastructure
+namespace LeasingNinja.Sales.Infrastructure;
+
+public class InMemoryContractsTest
 {
-    public class InMemoryContractsTest
+    private InMemoryContracts _contractsUnderTest;
+
+    public InMemoryContractsTest()
     {
-        private InMemoryContracts _contractsUnderTest;
+        _contractsUnderTest = new InMemoryContracts();
+    }
 
-        public InMemoryContractsTest()
-        {
-            _contractsUnderTest = new InMemoryContracts();
-        }
+    [Fact]
+    void GivenEmtpyContracts_WhenContractSavedAndLoaded_ThenItIsAnEqualContract() {
+        // given
 
-        [Fact]
-        void GivenEmtpyContracts_WhenContractSavedAndLoaded_ThenItIsAnEqualContract() {
-            // given
+        // when
+        _contractsUnderTest.Save(new Contract(
+            ContractNumber.Of("4711"),
+            Customer.Of("John Buyer"),
+            Car.Of("Mercedes Benz C class"),
+            Amount.Of(20_000, Currency.EUR)));
+        var contract = _contractsUnderTest.With(ContractNumber.Of("4711"));
 
-            // when
-            _contractsUnderTest.Save(new Contract(
+        // then
+        Check.That(contract).HasFieldsWithSameValues(
+            new Contract(
                 ContractNumber.Of("4711"),
                 Customer.Of("John Buyer"),
                 Car.Of("Mercedes Benz C class"),
                 Amount.Of(20_000, Currency.EUR)));
-            var contract = _contractsUnderTest.With(ContractNumber.Of("4711"));
-
-            // then
-            Check.That(contract).HasFieldsWithSameValues(
-                new Contract(
-                    ContractNumber.Of("4711"),
-                    Customer.Of("John Buyer"),
-                    Car.Of("Mercedes Benz C class"),
-                    Amount.Of(20_000, Currency.EUR)));
-        }
-
     }
+
 }

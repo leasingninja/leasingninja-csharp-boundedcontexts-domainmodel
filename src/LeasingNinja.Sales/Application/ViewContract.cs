@@ -1,19 +1,18 @@
 using LeasingNinja.Sales.Domain;
 
-namespace LeasingNinja.Sales.Application
+namespace LeasingNinja.Sales.Application;
+
+public class ViewContract
 {
-    public class ViewContract
+    private readonly Contracts _contracts;
+
+    public ViewContract(Contracts contracts)
     {
-        private readonly Contracts _contracts;
+        _contracts = contracts;
+    }
 
-        public ViewContract(Contracts contracts)
-        {
-            _contracts = contracts;
-        }
-
-        public Contract With(ContractNumber number)
-        {
-		    return _contracts.With(number);
-        }
+    public Contract With(ContractNumber number)
+    {
+        return _contracts.With(number);
     }
 }

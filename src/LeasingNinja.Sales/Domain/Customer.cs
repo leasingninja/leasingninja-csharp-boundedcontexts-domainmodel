@@ -1,10 +1,9 @@
 using NMolecules.DDD;
 
-namespace LeasingNinja.Sales.Domain
+namespace LeasingNinja.Sales.Domain;
+
+[ValueObject]
+public readonly record struct Customer(string Name)
 {
-    [ValueObject]
-    public readonly record struct Customer(string Name)
-    {
-        public static Customer Of(string name) => new Customer(name);
-    }
+    public static Customer Of(string name) => new(name);
 }
