@@ -11,10 +11,10 @@ namespace LeasingNinja.Sales.Domain
         {
             Assert(noOfMonths > 0);
 
-            return new LeaseTerm(noOfMonths);
+            return new(noOfMonths);
         }
 
         public static LeaseTerm OfYears(int noOfYears)
-            => LeaseTerm.OfMonths(noOfYears * 12);
+            => OfMonths(noOfYears * 12);
     }
 }

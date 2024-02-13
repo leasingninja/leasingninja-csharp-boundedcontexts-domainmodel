@@ -8,8 +8,7 @@ namespace LeasingNinja.Sales.Domain
     [ValueObject]
     public readonly record struct Interest(double PerYear)
     {
-        public static Interest Of(double perYear)
-            => new Interest(perYear);
+        public static Interest Of(double perYear) => new(perYear);
 
         public double PerMonth => PerYear / 12;
     }

@@ -12,7 +12,7 @@ namespace LeasingNinja.Sales.Domain
             => OfCents((long) Math.Round(amount * 100), currency);
 
         public static Amount OfCents(long amountInCents, Currency currency)
-            => new Amount(amountInCents, currency);
+            => new(amountInCents, currency);
 
         public static Amount operator +(Amount amount1, Amount amount2)
         {

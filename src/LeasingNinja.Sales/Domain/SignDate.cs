@@ -6,6 +6,6 @@ namespace LeasingNinja.Sales.Domain
     public readonly record struct SignDate(int Year, int Month, int Day)
     {
         public static SignDate Of(in int year, in int month, in int day)
-            => new SignDate(year, month, day);
+            => new(year, month, day);
     }
 }
