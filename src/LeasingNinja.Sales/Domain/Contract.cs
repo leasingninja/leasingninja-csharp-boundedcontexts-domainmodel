@@ -15,7 +15,7 @@ public class Contract
     public Car Car { get; }
     public Amount Price { get; }
 
-    private record Calculation(LeaseTerm LeaseTerm, Interest Interest, Amount Installment) {}
+    private record Calculation(LeaseTerm LeaseTerm, Interest Interest, Amount Installment);
     private Calculation? _calculation;
     public bool IsCalculated => _calculation != null;
     public LeaseTerm LeaseTerm
