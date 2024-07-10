@@ -14,11 +14,11 @@ public class SignContract
     public void With(ContractNumber number, SignDate signDate)
     {
         var contract = _contracts.With(number);
-		
+
         contract.Sign(signDate);
-		
+
         _contracts.Save(contract);
-		
+
         //riskmanagementInbox.confirmSignedContract(number.value(), signDate.year(), signDate.month(), signDate.day());
     }
 }
