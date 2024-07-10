@@ -52,7 +52,7 @@ public class AmountTest
     }
 
     [Fact]
-    void givenTwoAmountsWithRoundingAfterThePoint_whenEquals_thenAreEqual() {
+    void GivenTwoAmountsWithRoundingAfterThePoint_whenEquals_thenAreEqual() {
         // given
         var amount1 = Amount.Of(100.45m, Currency.EUR);
         var amount2 = Amount.Of(100.447123m, Currency.EUR);
@@ -65,7 +65,7 @@ public class AmountTest
     }
 
     [Fact]
-    void givenAnAmountsWithCents_whenToString_thenAfterThePointIsCorrectlyPrinted() {
+    void GivenAnAmountsWithCents_whenToString_thenAfterThePointIsCorrectlyPrinted() {
         // given
         var amount = Amount.Of(100.45m, Currency.EUR);
 
@@ -77,7 +77,7 @@ public class AmountTest
     }
 
     [Fact]
-    void givenTwoAmountsOfEurosAndCents_whenEquals_thenAreEqual() {
+    void GivenTwoAmountsOfEurosAndCents_whenEquals_thenAreEqual() {
         // given
         var amount1 = Amount.Of(100.45m, Currency.EUR);
         var amount2 = Amount.OfCents(10045, Currency.EUR);
@@ -90,7 +90,7 @@ public class AmountTest
     }
 
     [Fact]
-    void givenTwoAmounts_whenOperatorPlus_thenSumIsCorrect()
+    void GivenTwoAmounts_whenOperatorPlus_thenSumIsCorrect()
     {
         // given
         var amount1 = Amount.Of(100, Currency.EUR);
@@ -104,7 +104,7 @@ public class AmountTest
     }
 
     [Fact]
-    void givenTwoAmounts_whenOperatorMinus_thenDifferenceIsCorrect()
+    void GivenTwoAmounts_whenOperatorMinus_thenDifferenceIsCorrect()
     {
         // given
         var amount1 = Amount.Of(300, Currency.EUR);

@@ -7,9 +7,9 @@ namespace LeasingNinja.Sales.Domain;
 * Simulates the famous HP12c calculator that is widely used in the leasing industry.
 */
 [Service]
-public class FinancialCalculator
+public static class FinancialCalculator
 {
-    public static double pmt(double n, double iInPercent, double pv, double fv, double s)
+    public static double Pmt(double n, double iInPercent, double pv, double fv, double s)
     {
         double i = iInPercent / 100;
 

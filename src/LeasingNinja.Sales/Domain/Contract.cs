@@ -53,7 +53,7 @@ public class Contract
         get
         {
             Assert(IsSigned);
-            return _signDate.Value;
+            return _signDate!.Value;
         }
     }
 
@@ -72,7 +72,7 @@ public class Contract
         double inAdvance = 0.0;
         double residualValue = 0.0;
 
-        double pmt = FinancialCalculator.pmt(
+        double pmt = FinancialCalculator.Pmt(
             leaseTerm.NoOfMonths,
             interest.PerMonth,
             -1 * Price.AmountValue,
@@ -120,7 +120,7 @@ public class Contract
                + ", price=" + Price + ", signDate=" + SignDate + "]";
     }
 
-    protected bool Equals(Contract other)
+    private bool Equals(Contract other)
     {
         return EqualityComparer<ContractNumber>.Default.Equals(Number, other.Number);
     }
