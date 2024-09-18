@@ -28,8 +28,8 @@ public readonly record struct Amount(long AmountInCents, Currency Currency)
         return OfCents(amount1.AmountInCents - amount2.AmountInCents, amount1.Currency);
     }
 
-    public double AmountValue
-        => AmountInCents / 100d;
+    public decimal AmountValue
+        => AmountInCents / 100m;
 
     public override string ToString()
         => Currency + " " + AmountValue;

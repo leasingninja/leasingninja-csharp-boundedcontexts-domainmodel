@@ -2,6 +2,7 @@ using static System.Diagnostics.Debug;
 
 using System.Collections.Generic;
 using NMolecules.DDD;
+using System;
 
 namespace LeasingNinja.Sales.Domain;
 
@@ -75,11 +76,11 @@ public class Contract
         double pmt = FinancialCalculator.Pmt(
             leaseTerm.NoOfMonths,
             interest.PerMonth,
-            -1 * Price.AmountValue,
+            -1 * Convert.ToDouble(Price.AmountValue),
             residualValue,
             inAdvance);
 
-        _calculation = new Calculation(leaseTerm, interest, Amount.Of((decimal) pmt, Price.Currency));
+        _calculation = new Calculation(leaseTerm, interest, Amount.Of(Convert.ToDecimal(pmt), Price.Currency));
 
         Assert(IsCalculated);
     }
