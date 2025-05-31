@@ -6,7 +6,7 @@ namespace LeasingNinja.Sales.Domain;
 public class LeaseTermTest
 {
     [Fact]
-    void given_whenALeaseTermIsCreatedOfYears_thenNoOfMonthsIsCorrect()
+    void Given_whenALeaseTermIsCreatedOfYears_thenNoOfMonthsIsCorrect()
     {
         // given
 

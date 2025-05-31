@@ -6,7 +6,7 @@ namespace LeasingNinja.Sales.Domain;
 public class InterestTest
 {
     [Fact]
-    void givenAnInterest_whenPerMonth_thenCorrectValue() {
+    void GivenAnInterest_whenPerMonth_thenCorrectValue() {
         // given
         var interest = Interest.Of(3.6);
 
