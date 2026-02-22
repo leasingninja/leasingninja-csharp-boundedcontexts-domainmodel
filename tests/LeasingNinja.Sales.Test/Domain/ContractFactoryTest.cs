@@ -6,7 +6,7 @@ namespace LeasingNinja.Sales.Domain;
 public class ContractFactoryTest
 {
     [Fact]
-    void given_whenRestore_thenContractContainsRestoredData() {
+    void Given_whenRestore_thenContractContainsRestoredData() {
         // given
 
         // when
