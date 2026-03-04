@@ -6,7 +6,7 @@ namespace LeasingNinja.Sales.Infrastructure;
 public class InMemoryContracts : Contracts
 {
     private readonly IDictionary<ContractNumber, Contract> _contracts;
-	
+
     public InMemoryContracts() {
         _contracts = new Dictionary<ContractNumber, Contract>();
     }
