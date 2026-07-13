@@ -12,6 +12,7 @@
     <ItemGroup>
       <PackageReference Include="NMolecules.Architecture" Version="0.1.1" />
       <PackageReference Include="NMolecules.DDD" Version="0.2.2" />
+      <PackageReference Include="NMolecules.Events" Version="0.1.0" />
     </ItemGroup>
 
 </Project>

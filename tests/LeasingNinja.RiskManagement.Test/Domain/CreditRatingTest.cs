@@ -6,7 +6,7 @@ namespace LeasingNinja.RiskManagement.Domain;
 public class CreditRatingTest
 {
     [Fact]
-    void testIsValid()
+    void TestIsValid()
     {
         Check.That(CreditRating.IsValid(0)).IsFalse();
         Check.That(CreditRating.IsValid(1)).IsTrue();

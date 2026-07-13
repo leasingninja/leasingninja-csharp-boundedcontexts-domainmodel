@@ -6,7 +6,7 @@ namespace LeasingNinja.Sales.Domain;
 public class CurrencyTest
 {
     [Fact]
-    void givenTwoUnequalCurrencies_whenEquals_thenAreNotEqual()
+    void GivenTwoUnequalCurrencies_whenEquals_thenAreNotEqual()
     {
         // given
         var currency1 = Currency.EUR;

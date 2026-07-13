@@ -1,55 +1,56 @@
-using NFluent;
 using Xunit;
+using NFluent;
+
+using LeasingNinja.Sales.Domain;
 
 namespace LeasingNinja.RiskManagement.Domain;
 
 public class ContractTest
 {
-    //TODO:
-    // [Fact]
-    // void givenASignedContract_whenCheckCreditRating_ThenRated()
-    // {
-    //     // given
-    //     var contract = new Contract(ContractNumber.Of("4711"), SignDate.Of(2018, 4, 1));
+    [Fact]
+    void GivenASignedContract_whenCheckCreditRating_ThenRated()
+    {
+        // given
+        var contract = new Contract(ContractNumber.Of("4711"), SignDate.Of(2018, 4, 1));
 
-    //     // when
-    //     contract.CheckCreditRating(CreditRating.Of(3));
+        // when
+        contract.CheckCreditRating(CreditRating.Of(3));
 
-    //     // then
-    //     Check.That(contract.IsRated).IsTrue();
-    //     Check.That(contract.Rating).IsEqualTo(CreditRating.Of(3));
-    // }
+        // then
+        Check.That(contract.IsRated()).IsTrue();
+        Check.That(contract.Rating()).IsEqualTo(CreditRating.Of(3));
+    }
 
-/* TODO: translate from Java to C#
-        @Test
-        void givenARatedContract_whenVote_ThenVoted() {
-            // given
-            var contract = new Contract(ContractNumber.of("4711"), SignDate.of(2018, 4, 1));
-            contract.checkCreditRating(CreditRating.GOOD);
+    [Fact]
+    void GivenARatedContract_whenVote_ThenVoted()
+    {
+        // given
+        var contract = new Contract(ContractNumber.Of("4711"), SignDate.Of(2018, 4, 1));
+        contract.CheckCreditRating(CreditRating.Of(3));
 
-            // when
-            contract.vote(VoteResult.ACCEPTED);
+        // when
+        contract.Vote(VoteResult.ACCEPTED);
 
-            // then
-            assertThat(contract.isVoted()).isTrue();
-        }
+        // then
+        Check.That(contract.IsVoted()).IsTrue();
+    }
 
-        @Test
-        void restoreContract() {
-            // given
+    [Fact]
+    void RestoreContract()
+    {
+        // given
 
-            // when
-            var contract = Contract.restore(
-                ContractNumber.of("4711"),
-                SignDate.of(2018, 4, 1),
-                CreditRating.GOOD,
+        // when
+        var contract = Contract.Restore(
+                ContractNumber.Of("4711"),
+                SignDate.Of(2018, 4, 1),
+                CreditRating.Of(3),
                 VoteResult.ACCEPTED_WITH_OBLIGATIONS);
 
-            // then
-            assertThat(contract.identity()).isEqualTo(ContractNumber.of("4711"));
-//		assertThat(contract.signDate()).isEqualTo(SignDate.of(2018, 4, 1));
-            assertThat(contract.rating()).isEqualTo(CreditRating.GOOD);
-            assertThat(contract.isVoted()).isTrue();
-        }
-*/
+        // then
+        Check.That(contract.Number).IsEqualTo(ContractNumber.Of("4711"));
+//		Check.That(contract.SignDate()).IsEqualTo(SignDate.Of(2018, 4, 1));
+		Check.That(contract.Rating()).IsEqualTo(CreditRating.Of(3));
+		Check.That(contract.IsVoted()).IsTrue();
+    }
 }
