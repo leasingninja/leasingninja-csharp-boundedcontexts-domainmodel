@@ -1,6 +1,6 @@
 {
   "name": "C# DevContainer",
-  "image": "mcr.microsoft.com/devcontainers/dotnet:2-10.0",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:2-11.0",
   "features": {
     "ghcr.io/devcontainers-extra/features/fish-apt-get:1": {}
   },
